@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Informes de Uso · ISG Agronorte</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+* { box-sizing:border-box; margin:0; padding:0; }
+body {
+  background:#0A0A0A;
+  color:#fff;
+  font-family:'DM Sans', sans-serif;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+
+.topbar {
+  background:#111;
+  border-bottom:3px solid #FFDE00;
+  padding:0 20px;
+  height:56px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.topbar-logo { width:5px; height:24px; background:#FFDE00; border-radius:2px; }
+.topbar-title { font-family:'Syne',sans-serif; font-size:15px; font-weight:800; flex:1; }
+.topbar-back {
+  background:#367C2B; color:#fff; border-radius:8px; padding:6px 14px;
+  font-size:12px; font-weight:700; text-decoration:none;
+  display:flex; align-items:center; gap:5px;
+}
+
+.hero {
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:48px 24px;
+  text-align:center;
+}
+.hero-title {
+  font-family:'Syne', sans-serif;
+  font-size:clamp(26px,5vw,40px);
+  font-weight:800;
+  letter-spacing:-0.03em;
+  line-height:1.1;
+  margin-bottom:12px;
+}
+.hero-title span { color:#FFDE00; }
+.hero-sub {
+  font-size:13px;
+  color:#888;
+  max-width:480px;
+  line-height:1.6;
+  margin-bottom:44px;
+}
+
+.cards {
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+  gap:16px;
+  width:100%;
+  max-width:820px;
+}
+
+.card {
+  background:#1A1A1A;
+  border:1px solid #2A2A2A;
+  border-radius:16px;
+  padding:26px 22px;
+  text-decoration:none;
+  color:#fff;
+  cursor:pointer;
+  transition:all 0.2s;
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+.card::before {
+  content:'';
+  position:absolute;
+  top:0; left:0; right:0;
+  height:4px;
+  border-radius:16px 16px 0 0;
+}
+.card:hover { transform:translateY(-4px); border-color:#333; box-shadow:0 12px 40px rgba(0,0,0,0.4); }
+.card.green::before { background:#367C2B; }
+.card.gray::before { background:#555; }
+
+.card-icon { font-size:30px; }
+.card-title { font-family:'Syne', sans-serif; font-size:16px; font-weight:800; letter-spacing:-0.01em; }
+.card-desc { font-size:11px; color:#888; line-height:1.6; flex:1; }
+.card-tag { font-size:9px; font-weight:700; padding:3px 8px; border-radius:20px; letter-spacing:0.06em; align-self:flex-start; }
+.card.green .card-tag { background:#0A1A0A; color:#367C2B; border:1px solid #367C2B44; }
+.card.gray .card-tag { background:#1A1A1A; color:#888; border:1px solid #55555544; }
+
+.card-arrow { position:absolute; top:18px; right:18px; font-size:16px; color:#333; transition:all 0.2s; }
+.card:hover .card-arrow { color:#888; transform:translateX(3px); }
+
+.footer { text-align:center; padding:20px; font-size:11px; color:#444; }
+
+@media(max-width:600px){
+  .cards { grid-template-columns:1fr; }
+  .hero { padding:32px 20px; }
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-logo"></div>
+  <div class="topbar-title">Informes de Uso · ISG Agronorte</div>
+  <a class="topbar-back" href="https://aleregalini7488.github.io">🏠 Inicio</a>
+</div>
+
+<div class="hero">
+  <h1 class="hero-title">Informes de uso<br><span>de tecnología</span></h1>
+  <p class="hero-sub">Análisis de adopción y valor económico generado por la tecnología John Deere, por equipo, organización y sucursal.</p>
+
+  <div class="cards">
+
+    <a class="card green" href="https://aleregalini7488.github.io/informes-uso/cosechadoras.html">
+      <div class="card-arrow">→</div>
+      <div class="card-icon">🌾</div>
+      <div class="card-title">Cosechadoras</div>
+      <div class="card-desc">
+        GSA y HSA en cosechadoras S7 Ultimate. Productividad, valor económico y uso por organización y sucursal.
+      </div>
+      <div class="card-tag">DISPONIBLE</div>
+    </a>
+
+    <div class="card gray" onclick="alert('Próximamente disponible')">
+      <div class="card-arrow">→</div>
+      <div class="card-icon">🚜</div>
+      <div class="card-title">Tractores</div>
+      <div class="card-desc">
+        Adopción de AutoTrac, Section Control y dosis variable en tractores.
+      </div>
+      <div class="card-tag">PRÓXIMAMENTE</div>
+    </div>
+
+    <div class="card gray" onclick="alert('Próximamente disponible')">
+      <div class="card-arrow">→</div>
+      <div class="card-icon">✂️</div>
+      <div class="card-title">Picadoras</div>
+      <div class="card-desc">
+        Uso de tecnología de picado y comparativa de rendimiento.
+      </div>
+      <div class="card-tag">PRÓXIMAMENTE</div>
+    </div>
+
+  </div>
+</div>
+
+<div class="footer">
+  ISG · Agronorte · Intelligent Solutions Group · FY26
+</div>
+
+</body>
+</html>
